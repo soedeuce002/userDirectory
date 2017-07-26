@@ -1,0 +1,27 @@
+div{
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+}
+
+ul{
+  border: 1px solid gray;
+  text-align: left;
+  padding: 10px;
+}
+
+li {
+  list-style: none;
+}
+
+#name{
+  color: #5F68EF;
+  font-size: 24px;
+}
+
+#job{
+  color: #DB8559;
+}
+.work{
+  color: gray;
+}
