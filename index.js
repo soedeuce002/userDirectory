@@ -6,6 +6,7 @@ const app = express();
 app.engine('mustache', mustacheExpress());
 app.set('views', './views');
 app.set('view engine', 'mustache');
+
 app.use(express.static('public'));
 
 app.get('/', function(req, res){
@@ -15,8 +16,16 @@ res.render('index', {users: data.users});
 
 });
 
-
-
+app.get('/:index', function(req, res){
+  let user = req.params.index;
+  for (var i = 0; i < data.users.length; i++) {
+    if (data.users[i].name === user) {
+      res.render('profile', {
+        user: data.users[i]
+      });
+    }
+  }
+});
 
 //
 for (let i = 0; i < data.users.length; i++){
